@@ -5,7 +5,7 @@
 # Program description:
 # 1) Import libraries and set LED pin
 # 2) Create a dictionary containing values for the "traffic light" LEDs
-# 3) Print and Shine "traffic lights" based on provided values
+# 3) Print and Light "traffic light" LEDs based on provided values
 # Dependencies:   python3
 #   Inputs: traffic_status to set "traffic_light" LEDs
 #   Outputs: Welcome message, light  status, and value of red_LED
