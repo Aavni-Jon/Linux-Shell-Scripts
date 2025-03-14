@@ -9,12 +9,13 @@
 # Dependencies:   python3
 #   Inputs: traffic_status to set "traffic_light" LEDs
 #   Outputs: Welcome message, light  status, and value of red_LED
-# Revision: 
+# Revision:
+#  Revision 0.03 - Updated 03/14/2025 added blink code
 #  Revision 0.02 - Updated 03/13/2025 changed variable names, added conditionals for all LEDs
 #  Revision 0.01 - Created 03/12/2025
 import gpiozero
 from gpiozero import LED
-#import time
+import time
 
 red_LED = LED(3) #Using BCM GPIO3 on Board pin 5
 yellow_LED = LED(27) #Using BCM GPIO27 on Board pin 13 
@@ -44,14 +45,20 @@ def stop_light(traffic_status):
    
 def main():
     print("Welcome to the STEAM Clown Makey Bot")
- #   while(True)
-  #   print("LED on")
-    # time.sleep(1)
- #    print("LED off")
-    # white_led.off()
-   #  time.sleep(1)
     traffic_light = {'red_LED': 1, 'yellow_LED': 1,'green_LED': 1}
     stop_light(traffic_light)
-
+    while(traffic_light):
+        red_LED.on()
+        time.sleep(0.1)
+        yellow_LED.on()
+        time.sleep(0.1)
+        green_LED.on()
+        time.sleep(0.1)
+        red_LED.off()
+        time.sleep(0.1)
+        yellow_LED.off()
+        time.sleep(0.1)
+        green_LED.off()
+        time.sleep(0.1)
    
 main()
