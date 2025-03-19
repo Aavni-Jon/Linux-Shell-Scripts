@@ -12,9 +12,9 @@ redleft_pwm_pin = PWMLED(3)
 greenleft_pwm_pin = PWMLED(12)
 blueleft_pwm_pin = PWMLED(13)
 #Rasberry Pi Pind rigth eye
-redrigth_pwm_pin = PWMLED(16)
-greenrigth_pwm_pin = PWMLED(20)
-bluerigth_pwm_pin = PWMLED(21)
+redright_pwm_pin = PWMLED(16)
+greenright_pwm_pin = PWMLED(20)
+blueright_pwm_pin = PWMLED(21)
 
 def eyes_left_RGB(eyes_left):
     if debug_messages : print("Running lefteye_RGB function")
@@ -24,13 +24,13 @@ def eyes_left_RGB(eyes_left):
     greenleft_pwm_pin.value = eyes_left[green]
     blueleft_pwm_pin.value = eyes_left[blue]
 
-def eyes_rigth_RGB(eyes_rigth):
-    if debug_messages : print("Running rigtheye_RGB function")
-    if debug_messages : print(eyes_rigth)
-    red,green,blue = eyes_rigth
-    redrigth_pwm_pin.value = eyes_rigth[red]
-    greenrigth_pwm_pin.value = eyes_rigth[green]
-    bluerigth_pwm_pin.value = eyes_rigth[blue]
+def eyes_right_RGB(eyes_right):
+    if debug_messages : print("Running righteye_RGB function")
+    if debug_messages : print(eyes_right)
+    red,green,blue = eyes_right
+    redright_pwm_pin.value = eyes_right[red]
+    greenright_pwm_pin.value = eyes_right[green]
+    blueright_pwm_pin.value = eyes_right[blue]
 def main():
     print("Welcome To The STEAM Clown Makey Bot")
     eyes_left_RGBLEDs = {'red_RGBLED':.4, 'green_RGBLED':.5, 'blue_RGBLED':0}
@@ -38,10 +38,10 @@ def main():
     if debug_messages : print("Calling eyes_RGB function")
     eyes_left_RGB(eyes_left_RGBLEDs)
    
-    eyes_rigth_RGBLEDs = {'red_RGBLED':.4, 'green_RGBLED':.5, 'blue_RGBLED':0}
-    #eyes_RGBLEDs = {'rigth_eye':{'leye_red_RGBLED':1, 'leye_green_RGBLED':.5, 'leye_blue_RGBLED':.99}, 'right_eye':{'reye_red_RGBLED':1, 'reye_green_RGBLED':.5, 'reye_blue_RGBLED':.99}}
+    eyes_right_RGBLEDs = {'red_RGBLED':.4, 'green_RGBLED':.5, 'blue_RGBLED':0}
+    #eyes_RGBLEDs = {'right_eye':{'leye_red_RGBLED':1, 'leye_green_RGBLED':.5, 'leye_blue_RGBLED':.99}, 'right_eye':{'reye_red_RGBLED':1, 'reye_green_RGBLED':.5, 'reye_blue_RGBLED':.99}}
     if debug_messages : print("Calling eyes_RGB function")
-    eyes_rigth_RGB(eyes_rigth_RGBLEDs)
+    eyes_right_RGB(eyes_right_RGBLEDs)
    
     if debug_messages : print("Returned from eyes_RGB function")
 
